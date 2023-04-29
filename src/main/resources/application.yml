@@ -1,0 +1,23 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /openLineage
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: openLineage
+  main:
+    allow-bean-definition-overriding: true # SpringBoot 2.1需要设置
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  type-enums-package: com.saucesubfresh.lineage.enums*;com.saucesubfresh.lineage.common.enums*
+  global-config:
+    db-config:
+      id-type: auto
+
+logging:
+  level:
+    com.saucesubfresh: INFO
